@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class milk {
+public class Main {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double milkDouble;
         System.out.println("How many bottles of milk are on the wall?");
@@ -11,7 +11,8 @@ public class milk {
         while (milk <= 0) {
             System.out.println("There must be atleast one bottle of milk on the wall.");
             System.out.println("How many bottles of milk are on the wall?");
-            milk = scan.nextInt();
+            milkDouble = scan.nextInt();
+            milk = (int)milkDouble;
         }
         while (milk > 2) {
             System.out.print(milk + " bottles of milk on the wall, " + milk + " bottles of milk. ");
