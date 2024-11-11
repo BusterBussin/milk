@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class milk {
 
-    public void main(String args[]) {
+    public void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double milkDouble;
         System.out.println("How many bottles of milk are on the wall?");
