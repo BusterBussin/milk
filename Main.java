@@ -11,7 +11,7 @@ public class Main {
         while (milk <= 0) {
             System.out.println("There must be atleast one bottle of milk on the wall.");
             System.out.println("How many bottles of milk are on the wall?");
-            milkDouble = scan.nextInt();
+            milkDouble = scan.nextDouble();
             milk = (int)milkDouble;
         }
         while (milk > 2) {
@@ -20,7 +20,7 @@ public class Main {
             System.out.println("You take one down, pass it around, " + milk + " bottles of milk on the wall.");
         }
         if (milk == 2) {
-            System.out.println("2 bottles of milk on the wall, 2 bottles of milk. You take it down, pass it around, one bottle of milk on the wall.");
+            System.out.println("2 bottles of milk on the wall, 2 bottles of milk. You take one down, pass it around, one bottle of milk on the wall.");
             milk = milk - 1;
         }
         if (milk == 1) {
