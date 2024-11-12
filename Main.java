@@ -7,6 +7,7 @@ public class Main {
         double milkDouble;
         char playAgain = 'Y';
         String liquid;
+        int misinputs = 0;
         while(playAgain == 'Y' || playAgain == 'y') {
         System.out.println("What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");
         liquid = scan.nextLine().toLowerCase();
@@ -52,9 +53,17 @@ public class Main {
             if (playAgain == '1' || playAgain == '2' || playAgain == '3' || playAgain == '4' || playAgain == '5' || playAgain == '6' || playAgain == '7' || playAgain == '8' || playAgain == '9' || playAgain == '0') {
                 System.out.println("Are you stupid?");
             }
+            misinputs = misinputs + 1;
+            if (misinputs < 2 && misinputs > 6) {
+                System.out.println("It's not that hard.");
+            }
             System.out.println("That is not a valid choice.");
             System.out.println("Do you want to play again? (Y/N)");
             playAgain = scan.nextLine().charAt(0);
+            
+            if (playAgain == 'Y' || playAgain == 'y') {
+                System.out.println("yay");
+            }
         }
     }
         System.out.println("Thanks for playing.");
