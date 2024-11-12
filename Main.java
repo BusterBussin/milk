@@ -30,7 +30,7 @@ public class Main {
             milk = milk - 1;
         }
         if (milk == 1) {
-            System.out.println("One bottle of " + liquid + "on the wall, one bottle of " + liquid + ". You take it down, pass it around, no more bottles of " + liquid + " on the wall.");
+            System.out.println("One bottle of " + liquid + " on the wall, one bottle of " + liquid + ". You take it down, pass it around, no more bottles of " + liquid + " on the wall.");
         }
         System.out.println("No more bottles of " + liquid + " on the wall, no more bottles of " + liquid + ". You took them around, passed them around, no more bottles of " + liquid + " on the wall.");
         System.out.println("Do you want to play again? (Y/N)");
