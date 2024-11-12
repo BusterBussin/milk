@@ -15,7 +15,7 @@ public class Main {
         int milk = (int)milkDouble;
         
         while (milk <= 0) {
-            System.out.println("There must be atleast one bottle of" + liquid + "on the wall.");
+            System.out.println("There must be atleast one bottle of " + liquid + " on the wall.");
             System.out.println("How many bottles of " + liquid + " are on the wall?");
             milkDouble = scan.nextDouble();
             milk = (int)milkDouble;
