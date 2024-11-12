@@ -20,7 +20,19 @@ public class Main {
             milkDouble = scan.nextDouble();
             milk = (int)milkDouble;
         }
+        if (milk == 69) {
+                System.out.println("Nice.");
+            } else if (milk == 420) {
+                System.out.println("Don't do this stuff.");
+                liquid = "snoop";
+            } else if (milk == 666) {
+                System.out.println("Ohoho. No you don't.");
+                System.exit(0);
+            } else if (milk == 1) {
+                System.out.println("Only one? Boring.");
+            }
         while (milk > 2) {
+            
             System.out.print(milk + " bottles of " + liquid + " on the wall, " + milk + " bottles of " + liquid + ". ");
             milk = milk - 1;
             System.out.println("You take one down, pass it around, " + milk + " bottles of " + liquid + " on the wall.");
@@ -37,6 +49,9 @@ public class Main {
         scan.nextLine();
         playAgain = scan.nextLine().charAt(0);
         while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n') {
+            if (playAgain == '1' || playAgain == '2' || playAgain == '3' || playAgain == '4' || playAgain == '5' || playAgain == '6' || playAgain == '7' || playAgain == '8' || playAgain == '9' || playAgain == '0') {
+                System.out.println("Are you stupid?");
+            }
             System.out.println("That is not a valid choice.");
             System.out.println("Do you want to play again? (Y/N)");
             playAgain = scan.nextLine().charAt(0);
