@@ -50,10 +50,11 @@ public class Fun {
             System.out.println(color.red() + "stupid... lousy... programmers..." + color.reset());
             System.out.println("(Remember, you press enter to continue. This is your last reminder.)");
             funScan.nextLine();
-            while (passcode != "MILKMAN") {
+            while (!passcode.equals("MILKMAN")) {
                 System.out.println("Go ahead. Password, please.");
                 passcode = funScan.nextLine().toUpperCase();
-                if (passcode == "YOU") {
+                // Everything here is nonlethal. Do not close program.
+                if (passcode.equals("YOU")) {
                     System.out.println("Who am I?");
                     funScan.nextLine();
                     System.out.println("I... don't know.");
@@ -66,12 +67,52 @@ public class Fun {
                     System.out.println("I hope you live a good life.");
                     System.out.println("Because I cant");
                     System.out.println("Well, it's nice meeting you... uh... buddy.");
-                }
-                if (passcode == "EXIT") {
+                } else if (passcode.equals("EXIT")) {
                     System.out.println("Exit? Uh... heck... Ionno...");
                     System.out.println("I got a sticky note. That's all.");
+                    System.out.println(color.green() + "You got a note that says 'QUEST'." + color.reset());
+                } else if (passcode.equals("QUEST")) {
+                    System.out.println("Quest... Right. My " + color.yellow() + "master" + color.reset() + " said that there may be someone that will help.");
+                    System.out.println("Well... Here you are.");
+                    System.out.println("I come by every night, and I drop off a sweet delight.\n In the box that stores the liquid, is the man that did it.\n Who am I?");
+                    System.out.println("...");
+                    System.out.println("Oh, it's stupid. Forget it.");
+                } else if (passcode.equals("MILKMAN")) {
+                    System.out.println("Wait... RIGHT!");
+                    System.out.println("I'M THE MILKMAN!");
+                    System.out.println("THANK YOU SO MUCH. I CAN DELIVER THE MILK TO THE PEOPLE AROUND THE WORLD.");
+                    System.out.println("You Won!");
+                    System.exit(0);
+                }
+                // Everything below here should be lethal. Close program after death.
+                else if (passcode.equals("SYMPHONY")) {
+                    funEvent.webpage("https://youtube.com/shorts/hnvsxJdXDfk?si=O1EA9zupDFgmxHh6");
+                    System.out.println("Press enter to continue.");
+                    funScan.nextLine();
+                    dead();
+                } else if (passcode.equals("GARBAGE")){
+                    funEvent.webpage("https://www.youtube.com/watch?v=At8v_Yc044Y");
+                    System.out.println("Yikes. That's terrible.\n Press enter.");
+                    funScan.nextLine();
+                    dead();
                 }
             }
         }
     }
+    public void dead() {
+        if (Desktop.isDesktopSupported()) {
+      
+            //making a desktop object
+            Desktop desktop = Desktop.getDesktop();
+            try {
+               URI uri = new URI("https://youtu.be/-ZGlaAxB7nI");
+               desktop.browse(uri);
+            } catch (IOException excp) {
+               excp.printStackTrace();
+            } catch (URISyntaxException excp) {
+               excp.printStackTrace();
+            }
+            System.exit(0);
+    }
+}
 }
