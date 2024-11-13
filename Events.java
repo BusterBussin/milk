@@ -34,6 +34,8 @@ public class Events {
                 if (rng1 == rng2) {
                     System.out.println("You win!");
                     win = true;
+                    web = "https://www.youtube.com/watch?v=bByR5Zyq3to";
+                    webpage(web);
                 } else {
                     System.out.println("Try again.");
                     System.out.println("(Type anything to roll again)");
@@ -61,10 +63,6 @@ public class Events {
                     System.out.println(color.green() + "You win!" + color.reset());
                     win = true;
                 } else {
-                    if (rng2 == 7) {
-                        web = "https://www.youtube.com/watch?v=bByR5Zyq3to";
-                        webpage(web);
-                    }
                     System.out.println(color.red() + "Get better." + color.reset());
                 }
             }

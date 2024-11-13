@@ -69,6 +69,8 @@ public class Main {
                 playAgain = scan.nextLine().charAt(0);
                 if (playAgain == '7') {
                     System.out.println("No. Don't. Stop that. Don't.");
+                    website = "https://www.youtube.com/watch?v=xfJA_0DOAfs";
+                    event.webpage(website);
                     playAgain = scan.nextLine().charAt(0);
                     if (playAgain == '7') {
                         System.out.println("NO!");
