@@ -20,6 +20,7 @@ public class Main {
         milkDouble = scan.nextDouble();
         int milk = (int)milkDouble;
         Events event = new Events();
+        Fun passcodes = new Fun();
         String website = "www.youtube.com";
         while (milk <= 0) {
             System.out.println("There must be atleast one bottle of " + liquid + " on the wall.");
@@ -64,6 +65,21 @@ public class Main {
             int rng2 = (int)(Math.random() * 101);
             int rng3 = (int)(Math.random() * 10001);
             boolean win = false;
+            if (playAgain == '0') {
+                System.out.println("Enter a character. Now.");
+                playAgain = scan.nextLine().charAt(0);
+                    if (playAgain == '9') {
+                        System.out.println("Stop it. Stop it now.");
+                        playAgain = scan.nextLine().charAt(0);
+                        if (playAgain == '5') {
+                            System.out.println("No. Stop.");
+                            playAgain = scan.nextLine().charAt(0);
+                            if (playAgain == '8') {
+                                passcodes.pass();
+                            }
+                        }
+                    }
+            }
             if (playAgain == '7') {
                 System.out.println("Uhh... Try again.");
                 playAgain = scan.nextLine().charAt(0);
@@ -101,7 +117,7 @@ public class Main {
                 System.out.println("I'm done.");
             }
             if (misinputs == 69 ) {
-                System.out.println("Heh. Nice.");
+                System.out.println("0958.");
             }
             if (misinputs > 69) {
                 System.out.println("I'm done.");
