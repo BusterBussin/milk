@@ -1,4 +1,9 @@
+import java.net.URI;
 import java.util.Scanner;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.awt.Desktop;
+
 
 public class Main {
 
@@ -15,7 +20,7 @@ public class Main {
         milkDouble = scan.nextDouble();
         int milk = (int)milkDouble;
         Events event = new Events();
-        
+        String website = "www.youtube.com";
         while (milk <= 0) {
             System.out.println("There must be atleast one bottle of " + liquid + " on the wall.");
             System.out.println("How many bottles of " + liquid + " are on the wall?");
@@ -52,34 +57,30 @@ public class Main {
         scan.nextLine();
         playAgain = scan.nextLine().charAt(0);
         while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n') {
-            if (playAgain == '1' || playAgain == '2' || playAgain == '3' || playAgain == '4' || playAgain == '5' || playAgain == '6' || playAgain == '7' || playAgain == '8' || playAgain == '9' || playAgain == '0') {
+            if (playAgain == '1' || playAgain == '2' || playAgain == '3' || playAgain == '4' || playAgain == '5' || playAgain == '6' || playAgain == '8' || playAgain == '9' || playAgain == '0') {
                 System.out.println("Are you stupid?");
             }
             int rng = (int)(Math.random() * 101);
             int rng2 = (int)(Math.random() * 101);
+            int rng3 = (int)(Math.random() * 10001);
             boolean win = false;
-            if (rng == 50) {
-                System.out.println("You suck.");
-                System.out.println("Time to get lucky and pair two numbers to be the same!");
-                System.out.println("Type anything to get started.");
-                scan.nextLine();
-                while (!win) {
-                    rng = (int)(Math.random() * 64);
-                    rng2 = (int)(Math.random() * 64);
-                    System.out.println("First number: " + rng);
-                    System.out.println("Second number: " + rng2);
-                    if (rng == rng2) {
-                        System.out.println("You win!");
-                        win = true;
-                    } else {
-                        System.out.println("Try again.");
-                        System.out.println("(Type anything to roll again)");
-                        scan.nextLine();
+            if (playAgain == '7') {
+                System.out.println("Uhh... Try again.");
+                playAgain = scan.nextLine().charAt(0);
+                if (playAgain == '7') {
+                    System.out.println("No. Don't. Stop that. Don't.");
+                    playAgain = scan.nextLine().charAt(0);
+                    if (playAgain == '7') {
+                        System.out.println("NO!");
+                        for (int lines = 0; lines <= 25; lines++) {
+                            System.out.println("----------------------------------------------------------------------------------------------");
+                        }
+                        event.rngRoomHard(rng, rng2, win, rng3);
                     }
                 }
-                
-                scan.close();
-                System.exit(0);
+            }
+            if (rng == 50) {
+            event.rngRoom(rng, rng2, win);
             }
             misinputs = misinputs + 1;
             if (misinputs > 2 && misinputs < 6) {
