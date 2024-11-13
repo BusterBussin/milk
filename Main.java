@@ -54,8 +54,29 @@ public class Main {
                 System.out.println("Are you stupid?");
             }
             misinputs = misinputs + 1;
-            if (misinputs < 2 && misinputs > 6) {
+            if (misinputs > 2 && misinputs < 6) {
                 System.out.println("It's not that hard.");
+            }
+            if (misinputs >= 6 && misinputs < 10) {
+                System.out.println("Dude...");
+            }
+            if (misinputs >= 10 && misinputs < 15) {
+                System.out.println("You utter buffoon.");
+            }
+            if (misinputs >= 15 && misinputs < 25) {
+                System.out.println("DO. IT. CORRECTLY!");
+            }
+            if (misinputs >= 25 && misinputs < 69) {
+                System.out.println("I'm done.");
+            }
+            if (misinputs == 69 ) {
+                System.out.println("Heh. Nice.");
+            }
+            if (misinputs > 69) {
+                System.out.println("I'm done.");
+            }
+            if (misinputs == 100) {
+                System.out.println("https://www.youtube.com/watch?v=r5pEFAm63NM");
             }
             System.out.println("That is not a valid choice.");
             System.out.println("Do you want to play again? (Y/N)");
