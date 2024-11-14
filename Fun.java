@@ -14,7 +14,7 @@ public class Fun {
 
     public void pass() {
         for (int lines = 0; lines <= 100; lines++) {
-            System.out.println(color.red() + "----------------------------------------------------------------------------------------------" + color.reset());
+            System.out.println(color.red() + "----------------------------------------------------------------------------------------------" + color.reset()); }
             System.out.println(color.yellow() + "VERIFYING PASSCODE: " + color.green() + "0958" + color.reset());
             System.out.println(color.red() + "ACCESS GRANTED." + color.reset());
             System.out.println("Welcome to the password dungeon. Oh?");
@@ -61,7 +61,12 @@ public class Fun {
                     funScan.nextLine();
                     System.out.println("I forgot a long time ago.");
                     System.out.println("Well... who are you?");
-                    passcode = funScan.nextLine();
+                    passcode = funScan.nextLine().toUpperCase();
+                    if (passcode.equals("KRUSKIE") || passcode.equals("JUSTIN")) {
+                        System.out.println(passcode + "? That... sounds like a nerds name.");
+                    } else if (passcode.equals("DREW") || passcode.equals("ANDREW")) {
+                        System.out.println(passcode + "? You're probably a star war's fan, then.");
+                    }
                     System.out.println(passcode + ", huh... That's a nice name. I won't remember it. I never do.");
                     funScan.nextLine();
                     System.out.println("I hope you live a good life.");
@@ -83,7 +88,7 @@ public class Fun {
                     System.out.println("THANK YOU SO MUCH. I CAN DELIVER THE MILK TO THE PEOPLE AROUND THE WORLD.");
                     System.out.println("You Won!");
                     System.exit(0);
-                }
+                } 
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {
                     funEvent.webpage("https://youtube.com/shorts/hnvsxJdXDfk?si=O1EA9zupDFgmxHh6");
@@ -98,7 +103,7 @@ public class Fun {
                 }
             }
         }
-    }
+    
     public void dead() {
         if (Desktop.isDesktopSupported()) {
       
