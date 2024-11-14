@@ -13,14 +13,18 @@ public class Main {
         char playAgain = 'Y';
         String liquid;
         int misinputs = 0;
+        Events event = new Events();
+        Fun passcodes = new Fun();
         while(playAgain == 'Y' || playAgain == 'y') {
         System.out.println("What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");
         liquid = scan.nextLine().toLowerCase();
+        if(liquid.equals("passcoderoom")){
+            passcodes.pass();
+        }
         System.out.println("How many bottles of " + liquid + " are on the wall?");
         milkDouble = scan.nextDouble();
         int milk = (int)milkDouble;
-        Events event = new Events();
-        Fun passcodes = new Fun();
+        
         String website = "www.youtube.com";
         while (milk <= 0) {
             System.out.println("There must be atleast one bottle of " + liquid + " on the wall.");

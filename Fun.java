@@ -11,6 +11,9 @@ public class Fun {
     String passcode = " "; 
     char option = ' ';
     String web = " ";
+    boolean gotQuest = false;
+    boolean gotRiddle = false;
+    boolean gotYou = false;
 
     public void pass() {
         for (int lines = 0; lines <= 100; lines++) {
@@ -23,31 +26,45 @@ public class Fun {
             System.out.println("Who are you?" + color.red() + " You're not supposed to be here." + color.reset());
             funScan.nextLine();
             System.out.println("Oh well. It's not like you're going to break anything");
+            funScan.nextLine();
             System.out.println(".");
+            funScan.nextLine();
             System.out.println(".");
+            funScan.nextLine();
             System.out.println(".");
+            funScan.nextLine();
             System.out.println("Right? (Y/N)");
             option = funScan.nextLine().toUpperCase().charAt(0);
             if (option == 'Y') {
                 System.out.println("Great! Let's continue.");
+                funScan.nextLine();
             } else if (option == 'N') {
                 System.out.println("Oh. That's too bad.");
+                funScan.nextLine();
                 System.out.println(color.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + color.reset());
+                funScan.nextLine();
                 web = "https://www.youtube.com/watch?v=tHYJWn2jLaM";
                 funEvent.webpage(web);
                 System.exit(0);
             } else if (option != 'Y' || option != 'N') {
                 System.out.println("Well... Stay silent. See where that gets you.");
+                funScan.nextLine();
                 System.out.println(color.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + color.reset());
+                funScan.nextLine();
                 web = "https://www.youtube.com/watch?v=tHYJWn2jLaM";
                 funEvent.webpage(web);
                 System.exit(0);
             }
             System.out.println("Well. It's simple. You give me a word or something, and maybe it aligns with something in my book.");
+            funScan.nextLine();
             System.out.println("However, some of these passcodes are LETHAL.");
+            funScan.nextLine();
             System.out.println(color.blackBackground() + color.red() + "Don't die :)" + color.reset());
-            System.out.println("Enter a passcode. All caps would be nice, but be lazy if you will.");
+            funScan.nextLine();
+            System.out.println("Enter a passcode when I ask for one. All caps would be nice, but be lazy if you will.");
+            funScan.nextLine();
             System.out.println(color.red() + "stupid... lousy... programmers..." + color.reset());
+            funScan.nextLine();
             System.out.println("(Remember, you press enter to continue. This is your last reminder.)");
             funScan.nextLine();
             while (!passcode.equals("MILKMAN")) {
@@ -55,11 +72,14 @@ public class Fun {
                 passcode = funScan.nextLine().toUpperCase();
                 // Everything here is nonlethal. Do not close program.
                 if (passcode.equals("YOU")) {
+                    if (!gotYou) { 
+                        
                     System.out.println("Who am I?");
                     funScan.nextLine();
                     System.out.println("I... don't know.");
                     funScan.nextLine();
                     System.out.println("I forgot a long time ago.");
+                    funScan.nextLine();
                     System.out.println("Well... who are you?");
                     passcode = funScan.nextLine().toUpperCase();
                     if (passcode.equals("KRUSKIE") || passcode.equals("JUSTIN")) {
@@ -70,24 +90,55 @@ public class Fun {
                     System.out.println(passcode + ", huh... That's a nice name. I won't remember it. I never do.");
                     funScan.nextLine();
                     System.out.println("I hope you live a good life.");
-                    System.out.println("Because I cant");
+                    funScan.nextLine();
+                    System.out.println("Because I can't...");
+                    funScan.nextLine();
                     System.out.println("Well, it's nice meeting you... uh... buddy.");
+                    funScan.nextLine();
+                    gotYou = true;
+                } else if (gotYou) {
+                    System.out.println("I already told you who I am.");
+                    funScan.nextLine();
+                }
                 } else if (passcode.equals("EXIT")) {
+                    gotQuest = true;
                     System.out.println("Exit? Uh... heck... Ionno...");
+                    funScan.nextLine();
                     System.out.println("I got a sticky note. That's all.");
+                    funScan.nextLine();
                     System.out.println(color.green() + "You got a note that says 'QUEST'." + color.reset());
+                    funScan.nextLine();
                 } else if (passcode.equals("QUEST")) {
+                    if (gotQuest) {
                     System.out.println("Quest... Right. My " + color.yellow() + "master" + color.reset() + " said that there may be someone that will help.");
+                    funScan.nextLine();
                     System.out.println("Well... Here you are.");
+                    funScan.nextLine();
                     System.out.println("I come by every night, and I drop off a sweet delight.\n In the box that stores the liquid, is the man that did it.\n Who am I?");
+                    funScan.nextLine();
                     System.out.println("...");
+                    funScan.nextLine();
                     System.out.println("Oh, it's stupid. Forget it.");
+                    funScan.nextLine();
+                    gotRiddle = true;
+                    } else if (!gotQuest) {
+                        System.out.println("Quest? Like Dragon Quest?");
+                        funScan.nextLine();
+                    }
                 } else if (passcode.equals("MILKMAN")) {
+                    if (gotRiddle) {
                     System.out.println("Wait... RIGHT!");
+                    funScan.nextLine();
                     System.out.println("I'M THE MILKMAN!");
+                    funScan.nextLine();
                     System.out.println("THANK YOU SO MUCH. I CAN DELIVER THE MILK TO THE PEOPLE AROUND THE WORLD.");
+                    funScan.nextLine();
                     System.out.println("You Won!");
                     System.exit(0);
+                    } else if (!gotRiddle) {
+                        System.out.println("Wh... What?");
+                        funScan.nextLine();
+                    }
                 } 
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {
@@ -100,10 +151,34 @@ public class Fun {
                     System.out.println("Yikes. That's terrible.\n Press enter.");
                     funScan.nextLine();
                     dead();
+                } else if (passcode.equals("LEBANON GAMES")){
+                    funEvent.webpage("https://www.youtube.com/watch?v=NhHb9usKy6Q");
+                    System.out.println("Goated.");
+                    funScan.nextLine();
+                    System.exit(0);
+                } else if (passcode.equals("PASSWORD")) {
+                    funEvent.webpage("https://letmegooglethat.com/?q=how+to+stop+being+stupid");
+                    System.out.println("Here, let me google that for you.");
+                    System.exit(0);
+                } else if (passcode.equals("SKRIMP")) {
+                    funEvent.webpage("https://awesomegearboy.github.io/skrimp-detector/index.html");
+                    System.out.println("So... what did you press? Yes? or no?");
+                    passcode = funScan.nextLine().toUpperCase();
+                    if (passcode.equals("YES")) {
+                        System.out.println("Ew.");
+                        funScan.nextLine();
+                        dead();
+                    } else if (passcode.equals("NO")) {
+                        System.out.println("Good, good...");
+                        funScan.nextLine();
+                    } else {
+                        System.out.println("That's not an answer. Might as well...");
+                        funScan.nextLine();
+                        dead();
+                    }
                 }
             }
         }
-    
     public void dead() {
         if (Desktop.isDesktopSupported()) {
       
