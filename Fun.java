@@ -195,7 +195,7 @@ public class Fun {
                     funScan.nextLine();
                     System.out.println("I probably look ugly.");
                     funScan.nextLine();
-                    System.out.println(color.yellow() + "\t 1) 'You probably look very beautiful. Or... handsome.'" + color.reset());
+                    System.out.println(color.yellow() + "\t 1) 'You probably look very beautiful. Or... handsome.'");
                     System.out.println("\t 2) 'Yeah... Who knows.'");
                     System.out.println("\t 3) 'You probably look like dog poo.'" + color.reset());
                     number = funScan.nextInt();
