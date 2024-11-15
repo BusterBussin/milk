@@ -18,6 +18,7 @@ public class Fun {
     boolean family = false;
     boolean looks = false;
     int number = 0;
+    BossFight boss = new BossFight();
 
     public void pass() {
         for (int lines = 0; lines <= 100; lines++) {
@@ -227,6 +228,7 @@ public class Fun {
                             funScan.nextLine();
                             System.out.println("COME HERE YOU STUPID (smartypants) MOTHER(love)ING (precious) (creation of god)");
                             funScan.nextLine();
+                            boss.boss();
                         } else {
                             System.out.println("Oh... You're...");
                             funScan.nextLine();

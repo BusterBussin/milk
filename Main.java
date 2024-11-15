@@ -15,11 +15,15 @@ public class Main {
         int misinputs = 0;
         Events event = new Events();
         Fun passcodes = new Fun();
+        BossFight boss = new BossFight();
         while(playAgain == 'Y' || playAgain == 'y') {
         System.out.println("What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");
         liquid = scan.nextLine().toLowerCase();
         if(liquid.equals("passcoderoom")){
             passcodes.pass();
+        }
+        if(liquid.equals("bossfight")){
+            boss.boss();
         }
         System.out.println("How many bottles of " + liquid + " are on the wall?");
         milkDouble = scan.nextDouble();

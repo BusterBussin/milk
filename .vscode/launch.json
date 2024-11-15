@@ -5,6 +5,13 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
+            "projectName": "milkonthewall_99c610dd"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
             "projectName": "milk_d597461e"
         }
     ]
