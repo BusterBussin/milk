@@ -202,6 +202,7 @@ public class BossFight {
                 } if (randomNumber == 6) {
                     web("https://www.youtube.com/watch?v=wl2JnXjwWBM");
                 } if (randomNumber == 7) {
+                    // Something seems to be wrong here, but i don't know how the website stuff works in java -Drew
                     web("https://www.youtube.com/watch?v=RrDt9a0q3P0");
                 } if (randomNumber == 8) {
                     web("https://media.tenor.com/vHORAvTvOfYAAAAM/dog-spooky.gif");
@@ -218,7 +219,7 @@ public class BossFight {
       
             //making a desktop object
             Desktop desktop = Desktop.getDesktop();
-            try {
+            try { // Another error is occuring here -Drew
                URI uri = new URI(url);
                desktop.browse(uri);
             } catch (IOException excp) {
@@ -227,5 +228,5 @@ public class BossFight {
                excp.printStackTrace();
             }
         }
-        }
+    }
 }
