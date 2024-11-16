@@ -116,11 +116,12 @@ public class BossFight {
                     } else {
                         System.out.println("Not a valid choice.");
                     }
+                    
                     specialPower = specialPower + 5;
                     check.isBossDead(bossHP, scan);
                 }
-
-                }
+                option = 'R';
+                
                 critrng = (int)(Math.random() * 4);
                     if (critrng == 3) {
                         crit = true;
@@ -180,6 +181,7 @@ public class BossFight {
                  }
                  check.isPlayerDead(playerHP);
                  bossSpecialPower = bossSpecialPower + 5;
+                }
         }
 
         public void webAttack() {
