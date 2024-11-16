@@ -55,7 +55,7 @@ public class BossFight {
                         System.out.println(color.purple() + "Special attack needs atleast 50 Special Power." + color.reset());
                         System.out.println(color.purple() + "You currently have " + specialPower + " Special Power." + color.reset());
                     } else if (specialPower >= 50) {
-                        System.out.println(color.purple() + "\t X) SPECIAL ATTACK");
+                        System.out.println(color.purple() + "\t X) SPECIAL ATTACK" + color.reset());
                     }
                     option = scan.nextLine().toUpperCase().charAt(0);
                     critrng = (int)(Math.random() * 4);
@@ -185,7 +185,7 @@ public class BossFight {
         }
 
         public void webAttack() {
-            for (int i = 1; i < 3; i++)
+            for (int i = 0; i < 3; i++)
                 randomNumber = (int)(Math.random() * 10);
                 if (randomNumber == 0) {
                     web("https://www.google.com/search?client=opera-gx&q=help+i+accidentally+summoned+max+verstappen&sourceid=opera&ie=UTF-8&oe=UTF-8");
