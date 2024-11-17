@@ -126,7 +126,7 @@ public class BossFight {
                     if (critrng == 3) {
                         crit = true;
                     }
-                bossMove = (int)(Math.random() * 5);
+                bossMove = 1;
                 if (bossMove == 0) {
                     if (crit) {
                         crit();
@@ -183,9 +183,10 @@ public class BossFight {
                  bossSpecialPower = bossSpecialPower + 5;
                 }
         }
-
+        int i = 0;
         public void webAttack() {
-            for (int i = 0; i < 3; i++)
+            while (i < 3) {
+                i = i + 1;
                 randomNumber = (int)(Math.random() * 10);
                 if (randomNumber == 0) {
                     web("https://www.google.com/search?client=opera-gx&q=help+i+accidentally+summoned+max+verstappen&sourceid=opera&ie=UTF-8&oe=UTF-8");
@@ -209,6 +210,9 @@ public class BossFight {
                 } if (randomNumber == 9) {
                     web("https://open.spotify.com/track/3xZek9XkEaX130o3XN9cvd?si=5c82153910fc450d");
                 }
+            }
+            i = 0;
+            
         }
         public void crit() {
             System.out.println(color.yellow() + "CRIT!" + color.reset());
@@ -220,7 +224,7 @@ public class BossFight {
             //making a desktop object
             Desktop desktop = Desktop.getDesktop();
             try { // Another error is occuring here -Drew
-               URI uri = new URI(url);
+               URI uri = new URI(website);
                desktop.browse(uri);
             } catch (IOException excp) {
                excp.printStackTrace();
