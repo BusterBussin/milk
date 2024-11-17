@@ -242,6 +242,68 @@ public class Fun {
                 } else {
                     System.out.println(color.blue() + "(You already asked him about his looks. Maybe don't bring it up again.)" + color.reset());
                 }
+                } else if (passcode.equals("FAMILY")) {
+                    if (!family) {
+                        System.out.println("My... family?");
+                        funScan.nextLine();
+                        System.out.println("To be honest, I haven't seen them in so long.");
+                        funScan.nextLine();
+                        System.out.println("Dead by now, I bet.");
+                        funScan.nextLine();
+                        System.out.println("My dad wasn't such a great man, a drunk.");
+                        funScan.nextLine();
+                        System.out.println("Left me and my mom for some other rich girl.");
+                        funScan.nextLine();
+                        System.out.println("My mom took two jobs to help take care of me.");
+                        funScan.nextLine();
+                        System.out.println("Then, when I was 14, I saw an ad in the magazine.");
+                        funScan.nextLine();
+                        System.out.println(color.yellow() + "'Milkman wanted! Deliver milk today!'" + color.reset());
+                        funScan.nextLine();
+                        System.out.println("I took the job to help my mother, and it went so far.");
+                        funScan.nextLine();
+                        System.out.println("My sister? Well, she ran off with some biker gang.");
+                        funScan.nextLine();
+                        System.out.println("Nothing special to her, I bet.");
+                        funScan.nextLine();
+                        System.out.println("My wife...");
+                        funScan.nextLine();
+                        System.out.println("Before I was trapped here...");
+                        funScan.nextLine();
+                        System.out.println("We were so happy.");
+                        funScan.nextLine();
+                        System.out.println("They killed her.");
+                        funScan.nextLine();
+                        System.out.println("I miss her.");
+                        funScan.nextLine();
+                        System.out.println(color.yellow() + "\t 1) 'I'm sorry to hear that.'" + color.reset());
+                        System.out.println(color.yellow() + "\t 2) Stay silent" + color.reset());
+                        System.out.println(color.yellow() + "\t 3) 'Yer mum is a pig.'" + color.reset());
+                        number = funScan.nextInt();
+                        if (number == 1) {
+                            System.out.println("It was rough...");
+                            funScan.nextLine();
+                        } else if (number != 1 && number != 3) {
+                            System.out.println(color.blue() + "You decided to stay silent." + color.reset());
+                            funScan.nextLine();
+                        } else if (number == 3) {
+                            if (aggro) {
+                                System.out.println("Okay. That's... That's it!");
+                                funScan.nextLine();
+                                System.out.println("COME HERE YOU STUPID (smartypants) MOTHER(love)ING (precious) (creation of god)");
+                                funScan.nextLine();
+                                boss.boss();
+                            } else {
+                                aggro = true;
+                                System.out.println("What the...");
+                                funScan.nextLine();
+                                System.out.println("WHAT IS WRONG WITH YOU?!");
+                                funScan.nextLine();
+                                System.out.println(color.red() + "(The strange person's opinion on you changed!)" + color.reset());
+                                funScan.nextLine();
+                            }
+                        }
+                    }
                 }
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {

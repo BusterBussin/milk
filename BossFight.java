@@ -120,13 +120,14 @@ public class BossFight {
                     specialPower = specialPower + 5;
                     check.isBossDead(bossHP, scan);
                 }
+                scan.nextLine();
                 option = 'R';
                 
                 critrng = (int)(Math.random() * 4);
                     if (critrng == 3) {
                         crit = true;
                     }
-                bossMove = 1;
+                bossMove = (int)(Math.random() * 5);
                 if (bossMove == 0) {
                     if (crit) {
                         crit();
@@ -181,6 +182,7 @@ public class BossFight {
                  }
                  check.isPlayerDead(playerHP);
                  bossSpecialPower = bossSpecialPower + 5;
+                 scan.nextLine();
                 }
         }
         int i = 0;
