@@ -1,5 +1,11 @@
 import java.util.Scanner;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -23,6 +29,8 @@ public class Events {
     public void rngRoom(int rng1, int rng2, boolean win) {
         if (rng1 == 50) 
             System.out.println("You suck.");
+            
+            playSound();
             System.out.println("Time to get lucky and pair two numbers to be the same!");
             System.out.println("Type anything to get started.");
             eventScan.nextLine();
@@ -34,8 +42,8 @@ public class Events {
                 if (rng1 == rng2) {
                     System.out.println("You win!");
                     win = true;
-                    web = "https://www.youtube.com/watch?v=bByR5Zyq3to";
-                    webpage(web);
+                    win();
+                    eventScan.nextLine();
                 } else {
                     System.out.println("Try again.");
                     System.out.println("(Type anything to roll again)");
@@ -49,6 +57,7 @@ public class Events {
         AnsiColors color = new AnsiColors();
         if (rng1 == 50) 
             System.out.println("You suck.");
+            playSound();
             System.out.println("Time to get lucky and pair three numbers to be the same!");
             System.out.println("Type anything to get started.");
             eventScan.nextLine();
@@ -62,10 +71,12 @@ public class Events {
                 if (rng1 == rng2 && rng1 == rng3) {
                     System.out.println(color.green() + "You win!" + color.reset());
                     win = true;
+                    win();
                 } else {
                     System.out.println(color.red() + "Get better." + color.reset());
                 }
             }
+            eventScan.nextLine();
             eventScan.close();
             System.exit(0);
     }
@@ -83,5 +94,31 @@ public class Events {
                excp.printStackTrace();
             }
          }
+
+         
     }
+
+    public void playSound() {
+    try {
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Friday.wav").getAbsoluteFile());
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioInputStream);
+        clip.start();
+    } catch(Exception ex) {
+        System.out.println("Error with playing sound.");
+        ex.printStackTrace();
+    }
+}
+
+public void win() {
+    try {
+        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("yay.wav").getAbsoluteFile());
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioInputStream);
+        clip.start();
+    } catch(Exception ex) {
+        System.out.println("Error with playing sound.");
+        ex.printStackTrace();
+    }
+}
 }

@@ -1,0 +1,26 @@
+HOW TO: Get RNG ending (Normal)
+When prompted to enter either Y or N to play again, type in anything but that (DISCLAIMER: DO NOT LEAVE IT EMPTY, THE PROGRAM WILL BREAK)
+Eventually, you'll get the RNG room. You continuously press enter until eventually the two numbers match up.
+When they do, you will get a message saying you won.
+
+HOW TO: Get RNG ending (Hard)
+When prompted to enter either Y or N to play again, simply type 7 each time it says so.
+After three times, you'll go to the hard rng room. There will be three numbers that need to match up. 
+Press enter, and the code will run continuously. Good luck, it's a 1/1,000,000,000 chance.
+
+HOW TO: Get true ending
+When prompted to enter either Y or N to play again, type in anything but that (DISCLAIMER: DO NOT LEAVE IT EMPTY, THE PROGRAM WILL BREAK)
+Eventually, you'll see a group of numbers. Four numbers. Type those four numbers individually.
+You'll go somewhere.
+
+Anger the man there twice, and you'll get into combat. Caution, he will use your browser against you.
+
+HOW TO: Get Milkman ending
+Simply help the man recover his identity.
+
+only *YOU* can do this.
+
+SYMPHONY
+GARBAGE
+LEBANON GAMES
+SKRIMP

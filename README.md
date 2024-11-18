@@ -1,9 +1,7 @@
-It literally just sings milk on the wall
+DISCLAIMER: WE ARE NOT RESPOSIBLE FOR BLOWING UP LAPTOPS OR PCS, OR ANYTHING TECHNOLOGY RELATED IN THAT MATTER.
 
-the only difference is that you can choose the liquid
+Well, it's just a milk program.
 
-and the number
+Here, it looks like the milk program may have something far more to it. 
 
-the max is like 2 billion something
-
-ahaha have fun
+Good luck

@@ -108,7 +108,7 @@ public class Fun {
                     } else {
                         System.out.println(passcode + ", eh?");
                         funScan.nextLine();
-                        System.out.println("Yeah. Perfect name for a " + color.red() + " dumb idiot " + color.reset() + "like you.");
+                        System.out.println("Yeah. Perfect name for a" + color.red() + " dumb idiot " + color.reset() + "like you.");
 
                     }
                     gotYou = true;
