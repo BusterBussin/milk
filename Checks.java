@@ -52,7 +52,7 @@ public class Checks {
             System.out.println(color.green() + "Got: True Ending" + color.reset());
             System.out.println(" ");
             System.out.println(color.blue() + "Program made by: BusterBussin" + color.reset());
-            System.out.println(color.blue() + "AnsiColors code and bugfixing done by: AwesomeGearBoy" + color.reset());
+            System.out.println(color.blue() + "AnsiColors code, bugfixing, and SKRIMP DETECTOR done by: AwesomeGearBoy" + color.reset());
             System.out.println(" ");
             System.out.println(color.red() + "Thank you for playing." + color.reset());
             System.exit(0);
