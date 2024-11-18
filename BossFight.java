@@ -17,8 +17,8 @@ public class BossFight {
     String url = " ";
     char option = ' ';
     String action = " ";
-    int bossHP = 2000;
-    int playerHP = 2000;
+    int bossHP = 20000;
+    int playerHP = 20000;
     int damage = 0;
     boolean crit = false;
     int critrng = 0;
@@ -153,7 +153,7 @@ public class BossFight {
                 System.out.println("It did " + damage + " damage!");
             } else if (bossMove == 1) {
                 webAttack();
-                damage = 25;
+                damage = 100;
                 playerHP = playerHP - damage;
                 System.out.println("The Milkman used Web Attack!");
                 System.out.println("It did " + damage + " damage!");
@@ -187,7 +187,7 @@ public class BossFight {
                     System.out.println("It did " + damage + " damage!");
                 } else {
                     webAttack();
-                    damage = 25;
+                    damage = 100;
                     playerHP = playerHP - damage;
                     System.out.println("The Milkman used Web Attack!");
                     System.out.println("It did " + damage + " damage!");
@@ -202,7 +202,7 @@ public class BossFight {
     int i = 0;
 
     public void webAttack() {
-        while (i < 3) {
+        while (i < 4) {
             i = i + 1;
             randomNumber = (int) (Math.random() * 10);
             if (randomNumber == 0) {
