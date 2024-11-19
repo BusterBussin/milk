@@ -17,12 +17,12 @@ public class BossFight {
     String url = " ";
     char option = ' ';
     String action = " ";
-    int bossHP = 20000;
-    int playerHP = 20000;
+    int bossHP = 10000;
+    int playerHP = 10000;
     int damage = 0;
     boolean crit = false;
     int critrng = 0;
-    int specialPower = 0;
+    int specialPower = 50;
     int randomNumber = 0;
     int bossMove = 0;
     int bossSpecialPower = 0;
@@ -31,7 +31,7 @@ public class BossFight {
         System.out.println("Do you want boss music (Y/N)");
         option = scan.nextLine().toUpperCase().charAt(0);
         if (option == 'Y') {
-            playSound();
+            playBossMusic();
             System.out.println("Have fun.");
         } else if (option == 'N') {
             System.out.println("Have fun.");
@@ -122,6 +122,7 @@ public class BossFight {
                         }
                         System.out.println("It did " + damage + " damage!");
                         bossHP = bossHP - damage;
+                        specialPower = specialPower - 50;
                     } else {
                         option = 'F';
                         System.out.println("Not enough star power.");
@@ -168,7 +169,7 @@ public class BossFight {
                 System.out.println("The Milkman used Crate Throw!");
                 System.out.println("It did " + damage + " damage!");
             } else if (bossMove == 3) {
-                if (bossHP < 2000) {
+                if (bossHP < 9976) {
                     bossHP = bossHP + 25;
                     System.out.println("The Milkman used Milk!");
                     System.out.println("It healed 25 HP!");
@@ -185,6 +186,7 @@ public class BossFight {
                     }
                     playerHP = playerHP - damage;
                     System.out.println("It did " + damage + " damage!");
+                    bossSpecialPower = bossSpecialPower - 75;
                 } else {
                     webAttack();
                     damage = 100;
@@ -259,7 +261,7 @@ public class BossFight {
         }
     }
 
-    public void playSound() {
+    public void playBossMusic() {
     try {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("AltarsOfApostasy.wav").getAbsoluteFile());
         Clip clip = AudioSystem.getClip();
