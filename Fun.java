@@ -17,6 +17,8 @@ public class Fun {
     boolean aggro = false;
     boolean family = false;
     boolean looks = false;
+    boolean met = false;
+    Milk milk = new Milk();
     int number = 0;
     BossFight boss = new BossFight();
 
@@ -301,10 +303,15 @@ public class Fun {
                                 funScan.nextLine();
                                 System.out.println(color.red() + "(The strange person's opinion on you changed!)" + color.reset());
                                 funScan.nextLine();
-                            }
+                            } 
                         }
                     }
-                }
+                } else if (passcode.equals("BACK")) {
+                                System.out.println("You wanna go back?");
+                                System.out.println("Alright. Goodbye.");
+                                met = true;
+                                milk.milk();
+                            }
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {
                     funEvent.webpage("https://youtube.com/shorts/hnvsxJdXDfk?si=O1EA9zupDFgmxHh6");
