@@ -11,24 +11,21 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class BossFight {
-    AnsiColors color = new AnsiColors();
-    Scanner scan = new Scanner(System.in);
-    Checks check = new Checks();
-    String url = " ";
-    char option = ' ';
-    String action = " ";
-    int bossHP = 10000;
-    int playerHP = 10000;
-    int damage = 0;
-    boolean crit = false;
-    int critrng = 0;
-    int specialPower = 50;
-    int randomNumber = 0;
-    int bossMove = 0;
-    int bossSpecialPower = 0;
-    String NAME = " ";
 
-    public void boss() {
+    public static void boss(Scanner scan) {
+        Checks check = new Checks();
+        String url = " ";
+        char option = ' ';
+        String action = " ";
+        int bossHP = 10000;
+        int playerHP = 10000;
+        int damage = 0;
+        boolean crit = false;
+        int critrng = 0;
+        int specialPower = 50;
+        int bossMove = 0;
+        int bossSpecialPower = 0;
+        String NAME = " ";
         System.out.println("Do you want boss music (Y/N)");
         option = scan.nextLine().toUpperCase().charAt(0);
         if (option == 'Y') {
@@ -41,35 +38,38 @@ public class BossFight {
         }
         scan.nextLine();
         for (int lines = 0; lines <= 100; lines++) {
-            System.out.println(color.red()
+            System.out.println(AnsiColors.red()
                     + "----------------------------------------------------------------------------------------------"
-                    + color.reset());
+                    + AnsiColors.reset());
         }
         scan.nextLine();
-        System.out.println(color.red() + "SO LONG HAVE I BEEN RIDICULED BY WEAK, PATHETIC, GOOD-FOR-NOTHING MORTALS!");
+        System.out.println(
+                AnsiColors.red() + "SO LONG HAVE I BEEN RIDICULED BY WEAK, PATHETIC, GOOD-FOR-NOTHING MORTALS!");
         scan.nextLine();
         System.out.println("YOU, OF ALL PEOPLE, HAVE PEEVED ME THE MOST!");
         scan.nextLine();
         System.out.println("FEAR ME, YOU ABSOLUTE MORON!");
         scan.nextLine();
-        System.out.println("THY END IS NOW, FOR I AM THE MILKMAN!" + color.reset());
+        System.out.println("THY END IS NOW, FOR I AM THE MILKMAN!" + AnsiColors.reset());
         scan.nextLine();
         while (playerHP > 0 || bossHP > 0) {
             while (option != 'A' && option != 'B' && option != 'C' && option != 'D' && option != 'X') {
                 System.out.println("DO A MOVE!");
                 System.out.println("Boss HP: " + bossHP);
                 System.out.println("Player HP:" + playerHP);
-                System.out.println(color.yellow() + "\t A) Terror Chop" + color.reset());
-                System.out.println(color.yellow() + "\t B) Fatal Ghost Kick" + color.reset());
-                System.out.println(color.yellow() + "\t C) Nightmare Stomp" + color.reset());
-                System.out.println(color.yellow() + "\t D) Tickle Slap" + color.reset());
+                System.out.println(AnsiColors.yellow() + "\t A) Terror Chop" + AnsiColors.reset());
+                System.out.println(AnsiColors.yellow() + "\t B) Fatal Ghost Kick" + AnsiColors.reset());
+                System.out.println(AnsiColors.yellow() + "\t C) Nightmare Stomp" + AnsiColors.reset());
+                System.out.println(AnsiColors.yellow() + "\t D) Tickle Slap" + AnsiColors.reset());
                 if (specialPower < 50) {
                     System.out
-                            .println(color.purple() + "Special attack needs atleast 50 Special Power." + color.reset());
+                            .println(AnsiColors.purple() + "Special attack needs atleast 50 Special Power."
+                                    + AnsiColors.reset());
                     System.out.println(
-                            color.purple() + "You currently have " + specialPower + " Special Power." + color.reset());
+                            AnsiColors.purple() + "You currently have " + specialPower + " Special Power."
+                                    + AnsiColors.reset());
                 } else if (specialPower >= 50) {
-                    System.out.println(color.purple() + "\t X) SPECIAL ATTACK" + color.reset());
+                    System.out.println(AnsiColors.purple() + "\t X) SPECIAL ATTACK" + AnsiColors.reset());
                 }
                 option = scan.nextLine().toUpperCase().charAt(0);
                 critrng = (int) (Math.random() * 4);
@@ -78,7 +78,7 @@ public class BossFight {
                 }
                 if (option == 'A') {
                     if (crit) {
-                        crit();
+                        crit = crit();
                         damage = 250;
                     } else {
                         damage = 175;
@@ -87,7 +87,7 @@ public class BossFight {
                     bossHP = bossHP - damage;
                 } else if (option == 'B') {
                     if (crit) {
-                        crit();
+                        crit = crit();
                         damage = 200;
                     } else {
                         damage = 125;
@@ -96,7 +96,7 @@ public class BossFight {
                     bossHP = bossHP - damage;
                 } else if (option == 'C') {
                     if (crit) {
-                        crit();
+                        crit = crit();
                         damage = 350;
                     } else {
                         damage = 100;
@@ -105,7 +105,7 @@ public class BossFight {
                     bossHP = bossHP - damage;
                 } else if (option == 'D') {
                     if (crit) {
-                        crit();
+                        crit = crit();
                         damage = 400;
                     } else {
                         damage = 175;
@@ -116,7 +116,7 @@ public class BossFight {
                     if (specialPower >= 50) {
                         System.out.println("SPECIAL!");
                         if (crit) {
-                            crit();
+                            crit = crit();
                             damage = 700;
                         } else {
                             damage = 450;
@@ -145,7 +145,7 @@ public class BossFight {
             bossMove = (int) (Math.random() * 5);
             if (bossMove == 0) {
                 if (crit) {
-                    crit();
+                    crit = crit();
                     damage = 250;
                 } else {
                     damage = 150;
@@ -161,7 +161,7 @@ public class BossFight {
                 System.out.println("It did " + damage + " damage!");
             } else if (bossMove == 2) {
                 if (crit) {
-                    crit();
+                    crit = crit();
                     damage = 450;
                 } else {
                     damage = 250;
@@ -202,10 +202,11 @@ public class BossFight {
         }
     }
 
-    int i = 0;
-
-    public void webAttack() {
+    public static void webAttack() {
+        int i = 0;
         while (i < 4) {
+
+            int randomNumber = 0;
             i = i + 1;
             randomNumber = (int) (Math.random() * 10);
             if (randomNumber == 0) {
@@ -243,15 +244,15 @@ public class BossFight {
 
     }
 
-    public void crit() {
-        System.out.println(color.yellow() + "CRIT!" + color.reset());
-        crit = false;
+    public static boolean crit() {
+        System.out.println(AnsiColors.yellow() + "CRIT!" + AnsiColors.reset());
+        return false;
     }
 
-    public void web(String website) {
+    public static void web(String website) {
         if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();
-            try { 
+            try {
                 URI uri = new URI(website);
                 desktop.browse(uri);
             } catch (IOException excp) {
@@ -262,15 +263,16 @@ public class BossFight {
         }
     }
 
-    public void playBossMusic() {
-    try {
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("AltarsOfApostasy.wav").getAbsoluteFile());
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-        clip.start();
-    } catch(Exception ex) {
-        System.out.println("Error with playing sound.");
-        ex.printStackTrace();
+    public static void playBossMusic() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem
+                    .getAudioInputStream(new File("AltarsOfApostasy.wav").getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
     }
-}
 }

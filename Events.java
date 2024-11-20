@@ -11,22 +11,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Events {
-
-    Scanner eventScan = new Scanner(System.in);
-    int randomMilk = (int)(Math.random() * 10001);
-    String web = " ";
-
-    public int milkRNG(int random, int milk, String name) {
-        if (random == 1000000) {
-            System.out.println("CURSE YOU. (+" + randomMilk + " " + name + ")");
-            System.out.println("(Press enter to continue.)");
-            eventScan.nextLine();
-            return milk + randomMilk;            
-        } else {
-            return milk;
-        }
-    }
-    public void rngRoom(int rng1, int rng2, boolean win) {
+    
+    public void rngRoom(int rng1, int rng2, boolean win, Scanner eventScan) {
         if (rng1 == 50) 
             System.out.println("You suck.");
             
@@ -53,8 +39,7 @@ public class Events {
             eventScan.close();
             System.exit(0);
     }
-    public void rngRoomHard(int rng1, int rng2, boolean win, int rng3) {
-        AnsiColors color = new AnsiColors();
+    public void rngRoomHard(int rng1, int rng2, boolean win, int rng3, Scanner eventScan) {
         if (rng1 == 50) 
             System.out.println("You suck.");
             playSound();
@@ -69,11 +54,11 @@ public class Events {
                 System.out.println("Second number: " + rng2);
                 System.out.println("Third number: " + rng3);
                 if (rng1 == rng2 && rng1 == rng3) {
-                    System.out.println(color.green() + "You win!" + color.reset());
+                    System.out.println(AnsiColors.green() + "You win!" + AnsiColors.reset());
                     win = true;
                     win();
                 } else {
-                    System.out.println(color.red() + "Get better." + color.reset());
+                    System.out.println(AnsiColors.red() + "Get better." + AnsiColors.reset());
                 }
             }
             eventScan.nextLine();

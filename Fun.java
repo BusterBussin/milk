@@ -5,9 +5,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Fun {
-    Scanner funScan = new Scanner(System.in);
     Events funEvent = new Events();
-    AnsiColors color = new AnsiColors();
     String passcode = " "; 
     char option = ' ';
     String web = " ";
@@ -23,16 +21,18 @@ public class Fun {
     BossFight boss = new BossFight();
     boolean hasName = false;
     String name = " ";
+    Staniel stan = new Staniel();
 
-    public void pass() {
+    public void pass(Scanner funScan) {
         for (int lines = 0; lines <= 100; lines++) {
-            System.out.println(color.red() + "----------------------------------------------------------------------------------------------" + color.reset()); }
-            System.out.println(color.yellow() + "VERIFYING PASSCODE: " + color.green() + "0958" + color.reset());
-            System.out.println(color.red() + "ACCESS GRANTED." + color.reset());
+            System.out.println(AnsiColors.red() + "----------------------------------------------------------------------------------------------" + AnsiColors.reset()); }
+            System.out.println(AnsiColors.yellow() + "VERIFYING PASSCODE: " + AnsiColors.green() + "0958" + AnsiColors.reset());
+            System.out.println(AnsiColors.red() + "ACCESS GRANTED." + AnsiColors.reset());
+            if (!met) {
             System.out.println("Welcome to the password dungeon. Oh?");
             System.out.println("(Press enter to continue.)");
             funScan.nextLine();
-            System.out.println("Who are you?" + color.red() + " You're not supposed to be here." + color.reset());
+            System.out.println("Who are you?" + AnsiColors.red() + " You're not supposed to be here." + AnsiColors.reset());
             funScan.nextLine();
             System.out.println("Oh well. It's not like you're going to break anything");
             funScan.nextLine();
@@ -50,7 +50,7 @@ public class Fun {
             } else if (option == 'N') {
                 System.out.println("Oh. That's too bad.");
                 funScan.nextLine();
-                System.out.println(color.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + color.reset());
+                System.out.println(AnsiColors.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + AnsiColors.reset());
                 funScan.nextLine();
                 web = "https://www.youtube.com/watch?v=tHYJWn2jLaM";
                 funEvent.webpage(web);
@@ -58,7 +58,7 @@ public class Fun {
             } else if (option != 'Y' || option != 'N') {
                 System.out.println("Well... Stay silent. See where that gets you.");
                 funScan.nextLine();
-                System.out.println(color.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + color.reset());
+                System.out.println(AnsiColors.red() + "*You hear beeping on your neck. Wait... WHAT THE-*" + AnsiColors.reset());
                 funScan.nextLine();
                 web = "https://www.youtube.com/watch?v=tHYJWn2jLaM";
                 funEvent.webpage(web);
@@ -68,14 +68,22 @@ public class Fun {
             funScan.nextLine();
             System.out.println("However, some of these passcodes are LETHAL.");
             funScan.nextLine();
-            System.out.println(color.blackBackground() + color.red() + "Don't die :)" + color.reset());
+            System.out.println(AnsiColors.blackBackground() + AnsiColors.red() + "Don't die :)" + AnsiColors.reset());
             funScan.nextLine();
             System.out.println("Enter a passcode when I ask for one. All caps would be nice, but be lazy if you will.");
             funScan.nextLine();
-            System.out.println(color.red() + "stupid... lousy... programmers..." + color.reset());
+            System.out.println(AnsiColors.red() + "stupid... lousy... programmers..." + AnsiColors.reset());
             funScan.nextLine();
             System.out.println("(Remember, you press enter to continue. This is your last reminder.)");
             funScan.nextLine();
+        } else if (met) {
+            System.out.println("Welcome to the password dungeon");
+            if (aggro) {
+                System.out.println("Oh... you... yayyyyyy...");
+            } else {
+                System.out.println("Oh, hey. Welcome back.");
+            }
+        }
             while (!passcode.equals("MILKMAN")) {
                 if (aggro) {
                     System.out.println("Password. Now.");
@@ -113,7 +121,7 @@ public class Fun {
                     } else {
                         System.out.println(name + ", eh?");
                         funScan.nextLine();
-                        System.out.println("Yeah. Perfect name for a" + color.red() + " dumb idiot " + color.reset() + "like you.");
+                        System.out.println("Yeah. Perfect name for a" + AnsiColors.red() + " dumb idiot " + AnsiColors.reset() + "like you.");
 
                     }
                     gotYou = true;
@@ -134,7 +142,7 @@ public class Fun {
                     funScan.nextLine();
                     System.out.println("I got a sticky note. That's all.");
                     funScan.nextLine();
-                    System.out.println(color.green() + "You got a note that says 'QUEST'." + color.reset());
+                    System.out.println(AnsiColors.green() + "You got a note that says 'QUEST'." + AnsiColors.reset());
                     funScan.nextLine();
                     if (aggro) {
                         System.out.println("Please leave. God.");
@@ -142,7 +150,7 @@ public class Fun {
                     }
                 } else if (passcode.equals("QUEST")) {
                     if (gotQuest) {
-                    System.out.println("Quest... Right. My " + color.yellow() + "master" + color.reset() + " said that there may be someone that will help.");
+                    System.out.println("Quest... Right. My " + AnsiColors.yellow() + "master" + AnsiColors.reset() + " said that there may be someone that will help.");
                     funScan.nextLine();
                     System.out.println("Well... Here you are.");
                     funScan.nextLine();
@@ -201,9 +209,9 @@ public class Fun {
                     funScan.nextLine();
                     System.out.println("I probably look ugly.");
                     funScan.nextLine();
-                    System.out.println(color.yellow() + "\t 1) 'You probably look very beautiful. Or... handsome.'");
+                    System.out.println(AnsiColors.yellow() + "\t 1) 'You probably look very beautiful. Or... handsome.'");
                     System.out.println("\t 2) 'Yeah... Who knows.'");
-                    System.out.println("\t 3) 'You probably look like dog poo.'" + color.reset());
+                    System.out.println("\t 3) 'You probably look like dog poo.'" + AnsiColors.reset());
                     number = funScan.nextInt();
                     looks = true;
                     if (number == 1) {
@@ -215,13 +223,13 @@ public class Fun {
                             funScan.nextLine();
                             System.out.println("Uh... Well... Thank you.");
                             funScan.nextLine();
-                            System.out.println(color.blue() + "(The strange person's opinion on you changed!)" + color.reset());
+                            System.out.println(AnsiColors.blue() + "(The strange person's opinion on you changed!)" + AnsiColors.reset());
                             funScan.nextLine();
 
                         } else {
                             System.out.println("...");
                             funScan.nextLine();
-                            System.out.println(color.blue() + "(The mysterious person seems to be embarrased. However, the programmer was too lazy to add a romance route. We apologize for any inconvenience.)" + color.reset());
+                            System.out.println(AnsiColors.blue() + "(The mysterious person seems to be embarrased. However, the programmer was too lazy to add a romance route. We apologize for any inconvenience.)" + AnsiColors.reset());
                             funScan.nextLine();
                         }
                     } else if (number == 2) {
@@ -233,19 +241,19 @@ public class Fun {
                             funScan.nextLine();
                             System.out.println("COME HERE YOU STUPID (smartypants) MOTHER(love)ING (precious) (creation of god)");
                             funScan.nextLine();
-                            boss.boss();
+                            boss.boss(funScan);
                         } else {
                             System.out.println("Oh... You're...");
                             funScan.nextLine();
                             System.out.println("Jesus- you're actually kinda rude.");
                             funScan.nextLine();
-                            System.out.println(color.red() + "(The strange person's opinion on you changed!)" + color.reset());
+                            System.out.println(AnsiColors.red() + "(The strange person's opinion on you changed!)" + AnsiColors.reset());
                             funScan.nextLine();
                             aggro = true;
                         }
                     }
                 } else {
-                    System.out.println(color.blue() + "(You already asked him about his looks. Maybe don't bring it up again.)" + color.reset());
+                    System.out.println(AnsiColors.blue() + "(You already asked him about his looks. Maybe don't bring it up again.)" + AnsiColors.reset());
                 }
                 } else if (passcode.equals("FAMILY")) {
                     if (!family) {
@@ -263,7 +271,7 @@ public class Fun {
                         funScan.nextLine();
                         System.out.println("Then, when I was 14, I saw an ad in the magazine.");
                         funScan.nextLine();
-                        System.out.println(color.yellow() + "'Milkman wanted! Deliver milk today!'" + color.reset());
+                        System.out.println(AnsiColors.yellow() + "'Milkman wanted! Deliver milk today!'" + AnsiColors.reset());
                         funScan.nextLine();
                         System.out.println("I took the job to help my mother, and it went so far.");
                         funScan.nextLine();
@@ -281,15 +289,15 @@ public class Fun {
                         funScan.nextLine();
                         System.out.println("I miss her.");
                         funScan.nextLine();
-                        System.out.println(color.yellow() + "\t 1) 'I'm sorry to hear that.'" + color.reset());
-                        System.out.println(color.yellow() + "\t 2) Stay silent" + color.reset());
-                        System.out.println(color.yellow() + "\t 3) 'Yer mum is a pig.'" + color.reset());
+                        System.out.println(AnsiColors.yellow() + "\t 1) 'I'm sorry to hear that.'" + AnsiColors.reset());
+                        System.out.println(AnsiColors.yellow() + "\t 2) Stay silent" + AnsiColors.reset());
+                        System.out.println(AnsiColors.yellow() + "\t 3) 'Yer mum is a pig.'" + AnsiColors.reset());
                         number = funScan.nextInt();
                         if (number == 1) {
                             System.out.println("It was rough...");
                             funScan.nextLine();
                         } else if (number != 1 && number != 3) {
-                            System.out.println(color.blue() + "You decided to stay silent." + color.reset());
+                            System.out.println(AnsiColors.blue() + "You decided to stay silent." + AnsiColors.reset());
                             funScan.nextLine();
                         } else if (number == 3) {
                             if (aggro) {
@@ -297,23 +305,32 @@ public class Fun {
                                 funScan.nextLine();
                                 System.out.println("COME HERE YOU STUPID (smartypants) MOTHER(love)ING (precious) (creation of god)");
                                 funScan.nextLine();
-                                boss.boss();
+                                boss.boss(funScan);
                             } else {
                                 aggro = true;
                                 System.out.println("What the...");
                                 funScan.nextLine();
                                 System.out.println("WHAT IS WRONG WITH YOU?!");
                                 funScan.nextLine();
-                                System.out.println(color.red() + "(The strange person's opinion on you changed!)" + color.reset());
+                                System.out.println(AnsiColors.red() + "(The strange person's opinion on you changed!)" + AnsiColors.reset());
                                 funScan.nextLine();
                             } 
                         }
+                        System.out.println("Oh, yeah. I guess it's worth mentioning I have a cousin who is still alive.");
+                        System.out.println("His name is Staniel.");
+                    } else if (family) {
+                        System.out.println("I already told you this.");
                     }
                 } else if (passcode.equals("BACK")) {
                                 System.out.println("You wanna go back?");
                                 System.out.println("Alright. Goodbye.");
                                 met = true;
                                 milk.milk();
+                            } else if (passcode.equals("STANIEL")) {
+                                System.out.println("You want to see my cousin?");
+                                System.out.println("Alright. Have fun.");
+                                met = true;
+                                stan.stan(name, hasName, funScan);
                             }
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {

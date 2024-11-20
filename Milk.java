@@ -10,24 +10,23 @@ public class Milk {
         Events event = new Events();
         Fun passcodes = new Fun();
         BossFight boss = new BossFight();
-        AnsiColors color = new AnsiColors();
         char topic = ' ';
 
-        System.out.println(color.red() + "This program may include topics not suitable for some. (Updated 11/20/24)\n To see the topics, please press Y, these will have spoilers for the game. Otherwise, enjoy the game." + color.reset());
+        System.out.println(AnsiColors.red() + "This program may include topics not suitable for some. (Updated 11/20/24)\n To see the topics, please press Y, these will have spoilers for the game. Otherwise, enjoy the game." + AnsiColors.reset());
         topic = scan.nextLine().toUpperCase().charAt(0);
         if (topic == 'Y') {
-            System.out.println("The following topics include:\nSlight gore (Staniel is bleeding)\nTalk of suicide (Staniel's death)\nCartoon Violence (In-game Combat)\nViolence & Crime (Milkman's mother, Milkman being trapped)\nSuicide (One ending)" + color.reset());
+            System.out.println("The following topics include:\nSlight gore (Staniel is bleeding)\nTalk of suicide (Staniel's death)\nCartoon Violence (In-game Combat)\nViolence & Crime (Milkman's mother, Milkman being trapped)\nSuicide (One ending)" + AnsiColors.reset());
         }
-        System.out.println(color.red() + "You have been warned." + color.reset());
+        System.out.println(AnsiColors.red() + "You have been warned." + AnsiColors.reset());
         while (playAgain == 'Y' || playAgain == 'y') {
             System.out.println(
                     "What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");
             liquid = scan.nextLine().toLowerCase();
             if (liquid.equals("passcoderoom")) {
-                passcodes.pass();
+                passcodes.pass(scan);
             }
             if (liquid.equals("bossfight")) {
-                boss.boss();
+                boss.boss(scan);
             }
             System.out.println("How many bottles of " + liquid + " are on the wall?");
             milkDouble = scan.nextDouble();
@@ -52,8 +51,6 @@ public class Milk {
                 System.out.println("Only one? Boring.");
             }
             while (milk > 2) {
-                int milkrng = (int) (Math.random() * 1000001);
-                milk = event.milkRNG(milkrng, milk, liquid);
                 System.out.print(
                         milk + " bottles of " + liquid + " on the wall, " + milk + " bottles of " + liquid + ". ");
                 milk = milk - 1;
@@ -95,7 +92,7 @@ public class Milk {
                             System.out.println("No. Stop.");
                             playAgain = scan.nextLine().charAt(0);
                             if (playAgain == '8') {
-                                passcodes.pass();
+                                passcodes.pass(scan);
                             }
                         }
                     }
@@ -114,12 +111,12 @@ public class Milk {
                                 System.out.println(
                                         "----------------------------------------------------------------------------------------------");
                             }
-                            event.rngRoomHard(rng, rng2, win, rng3);
+                            event.rngRoomHard(rng, rng2, win, rng3, scan);
                         }
                     }
                 }
                 if (rng == 50) {
-                    event.rngRoom(rng, rng2, win);
+                    event.rngRoom(rng, rng2, win, scan);
                 }
                 misinputs = misinputs + 1;
                 if (misinputs > 2 && misinputs < 6) {
