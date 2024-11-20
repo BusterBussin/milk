@@ -10,7 +10,15 @@ public class Milk {
         Events event = new Events();
         Fun passcodes = new Fun();
         BossFight boss = new BossFight();
+        AnsiColors color = new AnsiColors();
+        char topic = ' ';
 
+        System.out.println(color.red() + "This program may include topics not suitable for some. (Updated 11/20/24)\n To see the topics, please press Y, these will have spoilers for the game. Otherwise, enjoy the game." + color.reset());
+        topic = scan.nextLine().toUpperCase().charAt(0);
+        if (topic == 'Y') {
+            System.out.println("The following topics include:\nSlight gore (Staniel is bleeding)\nTalk of suicide (Staniel's death)\nCartoon Violence (In-game Combat)\nViolence & Crime (Milkman's mother, Milkman being trapped)\nSuicide (One ending)" + color.reset());
+        }
+        System.out.println(color.red() + "You have been warned." + color.reset());
         while (playAgain == 'Y' || playAgain == 'y') {
             System.out.println(
                     "What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");

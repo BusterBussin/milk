@@ -1,16 +1,11 @@
-import java.io.File;
-import java.util.Scanner;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import java.util.Scanner;
 
 public class Checks {
     AnsiColors color = new AnsiColors();
     int option;
     public void isBossDead(int bossHP, Scanner scan) {
         if (bossHP <= 0) {
-            stopBossMusic();
             System.out.println("AGH! NO! WHAT THE...");
             scan.nextLine();
             System.out.println("THIS CAN'T BE!");
@@ -71,16 +66,4 @@ public class Checks {
             System.exit(0);
         }
     }
-
-    public void stopBossMusic() {
-    try {
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("AltarsOfApostasy.wav").getAbsoluteFile());
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioInputStream);
-        clip.stop();
-    } catch(Exception ex) {
-        System.out.println("Error with playing sound.");
-        ex.printStackTrace();
-    }
-}
 }

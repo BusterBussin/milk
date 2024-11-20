@@ -26,6 +26,7 @@ public class BossFight {
     int randomNumber = 0;
     int bossMove = 0;
     int bossSpecialPower = 0;
+    String NAME = " ";
 
     public void boss() {
         System.out.println("Do you want boss music (Y/N)");

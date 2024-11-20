@@ -21,6 +21,8 @@ public class Fun {
     Milk milk = new Milk();
     int number = 0;
     BossFight boss = new BossFight();
+    boolean hasName = false;
+    String name = " ";
 
     public void pass() {
         for (int lines = 0; lines <= 100; lines++) {
@@ -92,14 +94,15 @@ public class Fun {
                     System.out.println("I forgot a long time ago.");
                     funScan.nextLine();
                     System.out.println("Well... who are you?");
-                    passcode = funScan.nextLine().toUpperCase();
-                    if (passcode.equals("KRUSKIE") || passcode.equals("JUSTIN")) {
-                        System.out.println(passcode + "? That... sounds like a nerds name.");
-                    } else if (passcode.equals("DREW") || passcode.equals("ANDREW")) {
-                        System.out.println(passcode + "? You're probably a star war's fan, then.");
+                    name = funScan.nextLine().toUpperCase();
+                    hasName = true;
+                    if (name.equals("KRUSKIE") || name.equals("JUSTIN")) {
+                        System.out.println(name + "? That... sounds like a nerds name.");
+                    } else if (name.equals("DREW") || name.equals("ANDREW")) {
+                        System.out.println(name + "? You're probably a star war's fan, then.");
                     }
                     if (!aggro) {
-                    System.out.println(passcode + ", huh... That's a nice name. I won't remember it. I never do.");
+                    System.out.println(name + ", huh... That's a nice name. I won't remember it. I never do.");
                     funScan.nextLine();
                     System.out.println("I hope you live a good life.");
                     funScan.nextLine();
@@ -108,7 +111,7 @@ public class Fun {
                     System.out.println("Well, it's nice meeting you... uh... buddy.");
                     funScan.nextLine();
                     } else {
-                        System.out.println(passcode + ", eh?");
+                        System.out.println(name + ", eh?");
                         funScan.nextLine();
                         System.out.println("Yeah. Perfect name for a" + color.red() + " dumb idiot " + color.reset() + "like you.");
 
