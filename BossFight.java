@@ -14,18 +14,15 @@ public class BossFight {
 
     public static void boss(Scanner scan) {
         Checks check = new Checks();
-        String url = " ";
         char option = ' ';
-        String action = " ";
         int bossHP = 10000;
         int playerHP = 10000;
         int damage = 0;
         boolean crit = false;
         int critrng = 0;
-        int specialPower = 50;
+        int specialPower = 0;
         int bossMove = 0;
         int bossSpecialPower = 0;
-        String NAME = " ";
         System.out.println("Do you want boss music (Y/N)");
         option = scan.nextLine().toUpperCase().charAt(0);
         if (option == 'Y') {
@@ -132,9 +129,10 @@ public class BossFight {
                     System.out.println("Not a valid choice.");
                 }
 
-                specialPower = specialPower + 5;
+                
                 check.isBossDead(bossHP, scan);
             }
+            specialPower = specialPower + 5;
             scan.nextLine();
             option = 'R';
 
