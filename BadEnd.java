@@ -29,7 +29,7 @@ public class BadEnd {
         scan.nextLine();
         System.out.println(AnsiColors.black() + AnsiColors.whiteBackground() + "You saw the milkman struggling to tie a piece of rope a certain way." + AnsiColors.reset());
         scan.nextLine();
-        System.out.println(AnsiColors.red() + AnsiColors.whiteBackground() + "He's pathetic. I always wanted to reunite with him, to torture him more. But not like this.");
+        System.out.println(AnsiColors.red() + AnsiColors.whiteBackground() + "He's pathetic. I always wanted to reunite with him, to torture him more. But not like this." + AnsiColors.reset());
         scan.nextLine();
         System.out.println(AnsiColors.red() + AnsiColors.whiteBackground() + "So... thanks. A lot. Idiot. Leave." + AnsiColors.reset());
         scan.nextLine();
@@ -37,7 +37,7 @@ public class BadEnd {
         scan.nextLine();
         System.out.println(AnsiColors.blue() + "(... In the distance, you hear the sound of the Milkman's wooden chair fall.)" + AnsiColors.reset());
         scan.nextLine();
-        System.out.println(AnsiColors.red() + "Got: Bad Ending\nThank you for playing\nProgram made by: BusterBussin\nSkrimp Detector, AnsiColors code, and bugtesting done by:AwesomeGearBoy.");
+        System.out.println(AnsiColors.red() + "Got: Bad Ending\nThank you for playing\nProgram made by: BusterBussin\nSkrimp Detector, AnsiColors code, and bugtesting done by:AwesomeGearBoy." + AnsiColors.reset());
         System.exit(0);
     }
     
