@@ -22,6 +22,7 @@ public class Fun {
     boolean hasName = false;
     String name = " ";
     Staniel stan = new Staniel();
+    BadEnd bad = new BadEnd();
 
     public void pass(Scanner funScan) {
         for (int lines = 0; lines <= 100; lines++) {
@@ -317,20 +318,33 @@ public class Fun {
                             } 
                         }
                         System.out.println("Oh, yeah. I guess it's worth mentioning I have a cousin who is still alive.");
+                        funScan.nextLine();
                         System.out.println("His name is Staniel.");
+                        funScan.nextLine();
                     } else if (family) {
                         System.out.println("I already told you this.");
+                        funScan.nextLine();
                     }
                 } else if (passcode.equals("BACK")) {
                                 System.out.println("You wanna go back?");
+                                funScan.nextLine();
                                 System.out.println("Alright. Goodbye.");
+                                funScan.nextLine();
                                 met = true;
                                 milk.milk();
                             } else if (passcode.equals("STANIEL")) {
                                 System.out.println("You want to see my cousin?");
+                                funScan.nextLine();
                                 System.out.println("Alright. Have fun.");
+                                funScan.nextLine();
                                 met = true;
                                 stan.stan(name, hasName, funScan);
+                            } else if (passcode.equals("STANIEL IS DEAD")) {
+                                System.out.println("... What?");
+                                funScan.nextLine();
+                                System.out.println("You're a liar... You're a liar!");
+                                funScan.nextLine();
+                                bad.badend(funScan);
                             }
                 // Everything below here should be lethal. Close program after death.
                 else if (passcode.equals("SYMPHONY")) {

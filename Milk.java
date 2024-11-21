@@ -22,12 +22,6 @@ public class Milk {
             System.out.println(
                     "What exactly is on the wall? It should be a liquid, so it makes sense. Won't stop you, though.");
             liquid = scan.nextLine().toLowerCase();
-            if (liquid.equals("passcoderoom")) {
-                passcodes.pass(scan);
-            }
-            if (liquid.equals("bossfight")) {
-                boss.boss(scan);
-            }
             System.out.println("How many bottles of " + liquid + " are on the wall?");
             milkDouble = scan.nextDouble();
             int milk = (int) milkDouble;
